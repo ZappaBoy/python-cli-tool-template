@@ -6,7 +6,7 @@ from example_tool.models.log_level import LogLevel
 class Logger:
     def __init__(self, log_level: LogLevel | int = LogLevel.INFO):
         self.log_level = log_level
-        self.logger = logging.getLogger()
+        self.logger = logging.getLogger("example_tool")
         self.set_log_level(log_level)
         self.format = '%(levelname)-5s :: %(message)s'
         logging.basicConfig(format=self.format)
